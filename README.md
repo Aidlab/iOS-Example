@@ -1,7 +1,7 @@
 # Introduction
 This repository is dedicated for developers who want to understand how to build publicly distributed applications featuring Aidlab sensor integration. iOS-Example will guide you how to connect with Aidlab health tracker, so it will save your time and make real development faster and easier. 
 
-You can check our [website](www.aidlab.com/developer) to get the answers for the most common questions related to Aidlab.
+You can check our [website](http://www.aidlab.com/developer) to get the answers for the most common questions related to Aidlab.
 
 # Technical overview
 iOS-Example was build with Swift 3.0, using Xcode 8.0 and is created on top of Apple's Core Bluetooth technology.

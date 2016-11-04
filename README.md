@@ -63,7 +63,7 @@ Aidlab uses similar function to receive constant ECG measurement, which will all
 func didReceiveBatteryStatus( _ batteryStatus: BatteryStatus )
 
 public struct BatteryStatus {
-   ios-ex
+
    /// State of charge between 0.0 and 100.0
    var soc: Float
    

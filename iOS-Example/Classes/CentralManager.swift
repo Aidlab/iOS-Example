@@ -3,7 +3,7 @@
 //  iOS-Example
 //
 //  Created by J Domaszewicz on 04.11.2016.
-//  Copyright © 2016 Aidlab. All rights reserved.
+//  Copyright © 2016 Aidlab. MIT License.
 //
 //  To read a value from a BLE peripheral device (Aidlab), follow these steps:
 //

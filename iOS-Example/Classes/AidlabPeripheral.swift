@@ -3,7 +3,7 @@
 //  iOS-Example
 //
 //  Created by J Domaszewicz on 31.05.2016.
-//  Copyright © 2016 Aidlab. All rights reserved.
+//  Copyright © 2016 Aidlab. MIT License.
 //
 
 import Foundation

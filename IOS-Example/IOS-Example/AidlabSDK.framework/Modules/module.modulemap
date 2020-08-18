@@ -1,0 +1,11 @@
+framework module AidlabSDK {
+  umbrella header "AidlabSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module AidlabSDK.Swift {
+    header "AidlabSDK-Swift.h"
+    requires objc
+}

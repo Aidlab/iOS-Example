@@ -18,7 +18,8 @@ typedef enum {
     placedUpsideDown,
     loose,
     detached,
-    unknown
+    unknown,
+    unsettled
 
 } WearState;
 
@@ -28,8 +29,12 @@ typedef enum {
     pushUp,
     jump,
     sitUp,
-    burpee
-    
+    burpee,
+    pullUp,
+    squat,
+    plankStart,
+    plankEnd
+
 } Exercise;
 
 typedef enum {
@@ -48,6 +53,7 @@ typedef enum {
     end,
     stop,
     empty,
+    unavailable,
     
 } SyncState;
 
@@ -59,6 +65,14 @@ typedef enum {
     unknownResponse
 } UpdateError;
 
+
+typedef enum {
+    undefined,
+    front,
+    back,
+    leftSide,
+    rightSide,
+} BodyPosition;
 
 
 #endif /* AIDLAB_ENUM_H */

@@ -111,14 +111,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         values["connection"] = Value(description: "Aidlab is connected", value: "true")
     }
     
-    func didReceiveECG(_ aidlab: IAidlab, timestamp: UInt64, value: Float) {
+    func didReceiveECG(_ aidlab: IAidlab, timestamp: UInt64, values: [Float]) {
         
-        x_1 += 1
-        samplesPerSecond += 1
+        for value in values {
+            
+            x_1 += 1
+            samplesPerSecond += 1
 
-        values["ecg_samples"] = Value(description: "ECG samples", value: "\(x_1)")
-        ecgPlotter.data.append(value)
-        if ecgPlotter.data.count > 2000 { ecgPlotter.data.remove(at: 0) }
+            self.values["ecg_samples"] = Value(description: "ECG samples", value: "\(x_1)")
+            ecgPlotter.data.append(value)
+            if ecgPlotter.data.count > 2000 { ecgPlotter.data.remove(at: 0) }
+        }
     }
     
     func didReceiveBatteryLevel(_ aidlab: IAidlab, stateOfCharge: UInt8) {
@@ -131,7 +134,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         values["skin_temperature"] = Value(description: "Skin temperature", value: "\(value) C")
     }
     
-    func didReceiveRespiration(_ aidlab: IAidlab, timestamp: UInt64, value: Float) {}
+    func didReceiveRespiration(_ aidlab: IAidlab, timestamp: UInt64, values: [Float]) {}
     
     func didReceiveSteps(_ aidlab: IAidlab, timestamp: UInt64, value: UInt64) {}
     
@@ -143,7 +146,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func didReceiveQuaternion(_ aidlab: IAidlab, timestamp: UInt64, qw: Float, qx: Float, qy: Float, qz: Float) {}
     
-    func didReceiveOrientation(_ aidlab: IAidlab, timestamp: UInt64, roll: Float, pitch: Float, yaw: Float) {}
+    func didReceiveOrientation(_ aidlab: IAidlab, timestamp: UInt64, roll: Float, pitch: Float, yaw: Float, bodyPosition: BodyPosition) {}
     
     func didReceiveHeartRate(_ aidlab: IAidlab, timestamp: UInt64, hrv: [Int32], heartRate: Int32) {}
     
@@ -153,7 +156,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func didDetect(_ aidlab: IAidlab, exercise: Exercise) {}
     
-    func didDetect(_ aidlab: IAidlab, timestamp: UInt64, activity: ActivityType) { }
+    func didDetect(_ aidlab: IAidlab, timestamp: UInt64, activity: ActivityType) {}
     
     func didReceiveError(_ aidlab: IAidlab, error: Error) {}
     
@@ -162,12 +165,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func wearStateDidChange(_ aidlab: IAidlab, state: WearState) {}
     
     func didReceiveCommand(_ aidlab: IAidlab) {}
+    
+    func didReceiveMessage(_ aidlab: IAidlab, process: String, message: String) {}
         
     func syncStateDidChange(_ aidlab: IAidlab, state: SyncState) {}
     
-    func didReceivePastECG(_ aidlab: IAidlab, timestamp: UInt64, value: Float) { }
+    func didReceivePastECG(_ aidlab: IAidlab, timestamp: UInt64, values: [Float]) {}
     
-    func didReceivePastRespiration(_ aidlab: IAidlab, timestamp: UInt64, value: Float) { }
+    func didReceivePastRespiration(_ aidlab: IAidlab, timestamp: UInt64, values: [Float]) {}
     
     func didReceivePastSkinTemperature(_ aidlab: IAidlab, timestamp: UInt64, value: Float) {}
     

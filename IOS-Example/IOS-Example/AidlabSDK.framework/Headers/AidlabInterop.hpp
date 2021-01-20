@@ -13,8 +13,8 @@
 #include "AidlabEnum.h"
 
 @protocol AidlabInteropDelegate
-- (void) didReceiveECG: (uint64_t) timestamp value: (float) value;
-- (void) didReceiveRespiration: (uint64_t) timestamp value: (float) value;
+- (void) didReceiveECG: (uint64_t) timestamp values: (float*) values size: (int) size;
+- (void) didReceiveRespiration: (uint64_t) timestamp values: (float*) values size: (int) size;
 - (void) didReceiveBatteryLevel: (uint8_t) stateOfCharge;
 - (void) didReceiveSteps: (uint64_t) timestamp value: (uint64_t) value;
 - (void) didReceiveSkinTemperature: (uint64_t) timestamp value: (float) value;
@@ -22,7 +22,7 @@
 - (void) didReceiveGyroscope: (uint64_t) timestamp gx: (float) gx gy: (float) gy gz: (float) gz;
 - (void) didReceiveMagnetometer: (uint64_t) timestamp mx: (float) mx my: (float) my mz: (float) mz;
 - (void) didReceiveQuaternion: (uint64_t) timestamp qw: (float) qw qx: (float) qx qy: (float) qy qz: (float) qz;
-- (void) didReceiveOrientation: (uint64_t) timestamp roll: (float) roll pitch: (float) pitch yaw: (float) yaw;
+- (void) didReceiveOrientation: (uint64_t) timestamp roll: (float) roll pitch: (float) pitch yaw: (float) yaw bodyPosition: (BodyPosition) bodyPosition;
 - (void) didReceiveHeartRate: (uint64_t) timestamp hrv: (int*) hrv heartRate: (int) heartRate;
 - (void) didReceiveRespirationRate: (uint64_t) timestamp value: (uint32_t) value;
 - (void) wearStateDidChange: (WearState) state;
@@ -30,10 +30,11 @@
 - (void) didDetectExercise: (Exercise) exercise;
 - (void) didDetectActivity: (uint64_t) timestamp activity: (ActivityType) activity;
 - (void) didReceiveCommand;
+- (void) didReceiveMessage: (NSString*) process message: (NSString*) message;
 
 // AidlabSynchronizationDelegate
-- (void) didReceivePastECG: (uint64_t) timestamp value: (float) value;
-- (void) didReceivePastRespiration: (uint64_t) timestamp value: (float) value;
+- (void) didReceivePastECG: (uint64_t) timestamp values: (float*) values size: (int) size;
+- (void) didReceivePastRespiration: (uint64_t) timestamp values: (float*) values size: (int) size;
 - (void) didReceivePastSkinTemperature: (uint64_t) timestamp value: (float) value;
 - (void) didReceivePastHeartRate: (uint64_t) timestamp hrv: (int*) hrv heartRate: (int) heartRate;
 - (void) syncStateDidChange: (SyncState) syncState;

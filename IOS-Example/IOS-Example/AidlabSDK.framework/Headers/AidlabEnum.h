@@ -14,26 +14,26 @@
 
 typedef enum {
 
-    placedProperly,
-    placedUpsideDown,
-    loose,
-    detached,
-    unknown,
-    unsettled
+    placedProperly = 0,
+    placedUpsideDown = 1,
+    loose = 2,
+    detached = 3,
+    unknown = 4,
+    unsettled = 5
 
 } WearState;
 
 typedef enum {
     
     none = -1,
-    pushUp,
-    jump,
-    sitUp,
-    burpee,
-    pullUp,
-    squat,
-    plankStart,
-    plankEnd
+    pushUp = 0,
+    jump = 1,
+    sitUp = 2,
+    burpee = 3,
+    pullUp = 4,
+    squat = 5,
+    plankStart = 6,
+    plankEnd = 7
 
 } Exercise;
 
@@ -49,11 +49,11 @@ typedef enum {
 
 typedef enum {
 
-    start,
-    end,
-    stop,
-    empty,
-    unavailable,
+    start = 0,
+    end = 1,
+    stop = 2,
+    empty = 3,
+    unavailable = 4,
     
 } SyncState;
 
@@ -67,11 +67,11 @@ typedef enum {
 
 
 typedef enum {
-    undefined,
-    front,
-    back,
-    leftSide,
-    rightSide,
+    undefined = 0,
+    front = 1,
+    back = 2,
+    leftSide = 3,
+    rightSide = 4
 } BodyPosition;
 
 

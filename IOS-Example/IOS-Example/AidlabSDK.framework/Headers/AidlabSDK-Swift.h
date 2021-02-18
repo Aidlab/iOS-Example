@@ -241,6 +241,8 @@ SWIFT_CLASS("_TtC9AidlabSDK6Aidlab")
 - (void)didReceiveRespirationRate:(uint64_t)timestamp value:(uint32_t)value;
 - (void)wearStateDidChange:(WearState)state;
 - (void)didReceiveSoundVolume:(uint64_t)timestamp soundVolume:(uint16_t)soundVolume;
+- (void)didReceivePressure:(uint64_t)timestamp values:(int32_t * _Null_unspecified)values size:(int32_t)size;
+- (void)pressureWearStateDidChange:(WearState)state;
 - (void)didDetectExercise:(Exercise)exercise;
 - (void)didDetectActivity:(uint64_t)timestamp activity:(ActivityType)activity;
 - (void)didReceiveCommand;
@@ -254,6 +256,8 @@ SWIFT_CLASS("_TtC9AidlabSDK6Aidlab")
 - (void)didReceivePastActivity:(uint64_t)timestamp activity:(ActivityType)activity;
 - (void)didReceivePastSteps:(uint64_t)timestamp value:(uint64_t)value;
 - (void)didReceiveMessage:(NSString * _Nonnull)process message:(NSString * _Nonnull)message;
+- (void)didDetectUserEvent;
+- (void)didReceiveSoundFeatures:(float * _Null_unspecified)values size:(int32_t)size;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -519,6 +523,8 @@ SWIFT_CLASS("_TtC9AidlabSDK6Aidlab")
 - (void)didReceiveRespirationRate:(uint64_t)timestamp value:(uint32_t)value;
 - (void)wearStateDidChange:(WearState)state;
 - (void)didReceiveSoundVolume:(uint64_t)timestamp soundVolume:(uint16_t)soundVolume;
+- (void)didReceivePressure:(uint64_t)timestamp values:(int32_t * _Null_unspecified)values size:(int32_t)size;
+- (void)pressureWearStateDidChange:(WearState)state;
 - (void)didDetectExercise:(Exercise)exercise;
 - (void)didDetectActivity:(uint64_t)timestamp activity:(ActivityType)activity;
 - (void)didReceiveCommand;
@@ -532,6 +538,8 @@ SWIFT_CLASS("_TtC9AidlabSDK6Aidlab")
 - (void)didReceivePastActivity:(uint64_t)timestamp activity:(ActivityType)activity;
 - (void)didReceivePastSteps:(uint64_t)timestamp value:(uint64_t)value;
 - (void)didReceiveMessage:(NSString * _Nonnull)process message:(NSString * _Nonnull)message;
+- (void)didDetectUserEvent;
+- (void)didReceiveSoundFeatures:(float * _Null_unspecified)values size:(int32_t)size;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

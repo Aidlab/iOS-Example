@@ -30,7 +30,11 @@
 - (void) didDetectExercise: (Exercise) exercise;
 - (void) didDetectActivity: (uint64_t) timestamp activity: (ActivityType) activity;
 - (void) didReceiveCommand;
+- (void) didReceivePressure: (uint64_t) timestamp values: (int32_t*) valuess size: (int) size;
+- (void) pressureWearStateDidChange: (WearState) state;
 - (void) didReceiveMessage: (NSString*) process message: (NSString*) message;
+- (void) didDetectUserEvent;
+- (void) didReceiveSoundFeatures: (float*) values size: (int) size;
 
 // AidlabSynchronizationDelegate
 - (void) didReceivePastECG: (uint64_t) timestamp values: (float*) values size: (int) size;
@@ -66,11 +70,14 @@
 - (void) processHeartRatePackage: (uint8_t*) sample size:(int) size;
 - (void) processCommandPackage: (uint8_t*) sample size:(int) size;
 - (void) processSoundVolumePackage: (uint8_t*) sample size:(int) size;
+- (void) processNasalCannulaPackage: (uint8_t*) sample size:(int) size;
 - (void) setHardwareRevision: (unsigned char*) hwRevision size:(int) size;
 - (void) setFirmwareRevision: (unsigned char*) fwRevision size:(int) size;
+- (void) processSoundFeaturesPackage: (uint8_t*) sample size:(int) size;
 - (void) setAggressiveECGFiltration: (bool) value;
 - (void) setUserCallback;
 - (void) didConnect;
+- (void) kill;
 - (uint32_t) getTime;
 - (uint8_t*) prepareCommand: (NSString *) command;
 - (void) startFirmwareUpdate: (uint8_t*) firmware firmwareSize: (int) firmwareSize;

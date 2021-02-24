@@ -167,6 +167,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func didReceiveCommand(_ aidlab: IAidlab) {}
     
     func didReceiveMessage(_ aidlab: IAidlab, process: String, message: String) {}
+    
+    func didDetectUserEvent(_ aidlab: IAidlab) {}
         
     func syncStateDidChange(_ aidlab: IAidlab, state: SyncState) {}
     
